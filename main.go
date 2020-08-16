@@ -3,37 +3,22 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/Ajfero/Encapsulacion.git/course"
 )
 
 func main() {
 	Go := &course.Course{
-		"Go desde Cero",
-		12.34,
-		false,
-		[]uint{12, 56, 89},
-		map[uint]string{
+		Name:   "Go desde Cero",
+		Price:  12.34,
+		IsFree: false,
+		UserID: []uint{12, 56, 89},
+		Temario: map[uint]string{
 			1: "Introduccion",
 			2: "Estructuras",
 			3: "Maps",
 		},
 	}
-
-	Go.PrintClass()
-	Go.ChangePrice(67.12)
+	fmt.Println(Go.Name)
 }
-
-// func main() {
-// 	Go := &course.Course{
-// 		Name:   "Go desde Cero",
-// 		Price:  12.34,
-// 		IsFree: false,
-// 		UserID: []uint{12, 56, 89},
-// 		Temario: map[uint]string{
-// 			1: "Introduccion",
-// 			2: "Estructuras",
-// 			3: "Maps",
-// 		},
-// 	}
-// 	fmt.Println(Go.Name)
-// }
