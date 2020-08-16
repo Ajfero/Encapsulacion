@@ -4,7 +4,8 @@ package course
 
 import "fmt"
 
-type Course struct {
+//* No exportamos la estructura
+type course struct {
 	Name    string
 	Price   float64
 	IsFree  bool
@@ -12,7 +13,7 @@ type Course struct {
 	Temario map[uint]string
 }
 
-func (c *Course) PrintClass() {
+func (c *course) PrintClass() {
 	text := "Las clases son: "
 	for _, temas := range c.Temario {
 		text += temas + ", "
@@ -20,6 +21,18 @@ func (c *Course) PrintClass() {
 	fmt.Println("Methods- " + text[:len(text)-2])
 }
 
-func (c *Course) ChangePrice(Price float64) {
+func (c *course) ChangePrice(Price float64) {
 	c.Price = Price
+}
+
+//* En caso de necesitar Constructor
+func New(name string, price float64, isFree bool) *course {
+	if price == 0 {
+		price = 30
+	}
+	return &course{
+		Name:   name,
+		Price:  price,
+		IsFree: isFree,
+	}
 }

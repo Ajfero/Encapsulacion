@@ -9,16 +9,13 @@ import (
 )
 
 func main() {
-	Go := &course.Course{
-		Name:   "Go desde Cero",
-		Price:  12.34,
-		IsFree: false,
-		UserID: []uint{12, 56, 89},
-		Temario: map[uint]string{
-			1: "Introduccion",
-			2: "Estructuras",
-			3: "Maps",
-		},
+	Go := course.New("Go desde Cero", 0, false)
+	Go.UserID = []uint{12, 56, 89}
+	Go.Temario = map[uint]string{
+		1: "Introduccion",
+		2: "Estructuras",
+		3: "Maps",
+		}
 	}
-	fmt.Println(Go.Name)
+	Go.PrintClass()
 }
