@@ -1,0 +1,1 @@
+Creamos este archivo para diferenciar el commit de encapsulamiento para explicar el siguiente punto de func new().
